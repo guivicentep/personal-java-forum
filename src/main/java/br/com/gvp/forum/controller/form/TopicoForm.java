@@ -1,13 +1,24 @@
 package br.com.gvp.forum.controller.form;
 
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.Length;
+
 import br.com.gvp.forum.modelo.Curso;
 import br.com.gvp.forum.modelo.Topico;
 import br.com.gvp.forum.repository.CursoRepository;
 
 public class TopicoForm {
 	
+	@NotBlank 
+	@Length(min = 5)
 	private String titulo;
+	
+	@NotBlank
+	@Length(min = 10)
 	private String mensagem;
+	
+	@NotBlank
 	private String nomeCurso;
 	
 	public String getTitulo() {
